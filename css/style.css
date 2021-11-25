@@ -26,3 +26,19 @@ a {text-decoration: none;}
 #section4 {background:radial-gradient(ellipse farthest-corner at center top, #FF5300, #45145A);}
 #section5 {background:radial-gradient(ellipse farthest-corner at center bottom, #852D91, #312A6C);}
 #section6 {background:radial-gradient(ellipse farthest-corner at center top, #FBB03B, #D4145A);}
+
+/* text animation */
+#contents > div h2 {transition: all 0.6s ease-in-out;}
+#section1 h2 {opacity: 0; transform: translate(0,0)}
+#section2 h2 {opacity: 0; transform: translate(0,-20%)}
+#section3 h2 {opacity: 0; transform: translate(-20%,0)}
+#section4 h2 {opacity: 0; transform: translate(10%,0)}
+#section5 h2 {opacity: 0; transform: rotate(45deg)}
+#section6 h2 {opacity: 0; transform: skew(90deg)}
+#contents > div.show h2 {transform: none;}
+#section1.show h2 {opacity: 1;}
+#section2.show h2 {opacity: 1;}
+#section3.show h2 {opacity: 1;}
+#section4.show h2 {opacity: 1;}
+#section5.show h2 {opacity: 1;}
+#section6.show h2 {opacity: 1;}

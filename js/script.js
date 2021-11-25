@@ -38,6 +38,25 @@ $(window).scroll(function(){
         nav.removeClass("active");
         nav.eq(5).addClass("active");
     }
+    //Text Animation
+    if(wScroll >= cont.eq(0).offset().top - $(window).height()/3 ){
+        cont.eq(0).addClass("show");
+    }
+    if(wScroll >= cont.eq(1).offset().top - $(window).height()/3 ){
+        cont.eq(1).addClass("show");
+    }
+    if(wScroll >= cont.eq(2).offset().top - $(window).height()/3 ){
+        cont.eq(2).addClass("show");
+    }
+    if(wScroll >= cont.eq(3).offset().top - $(window).height()/3 ){
+        cont.eq(3).addClass("show");
+    }
+    if(wScroll >= cont.eq(4).offset().top - $(window).height()/3 ){
+        cont.eq(4).addClass("show");
+    }
+    if(wScroll >= cont.eq(5).offset().top - $(window).height()/3 ){
+        cont.eq(5).addClass("show");
+    }
 });
 
 var wHeight = $(window).height();
