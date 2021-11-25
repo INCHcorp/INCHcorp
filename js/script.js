@@ -39,3 +39,21 @@ $(window).scroll(function(){
         nav.eq(5).addClass("active");
     }
 });
+
+$(".mNav").click(function(){
+    //$(".menu").css("display","block");
+    //$(".menu").show();
+    //$(".menu").fadeIn();
+    //$(".menu").slideDown();
+    $(".menu").toggle();
+    //$(".menu").fadeToggle();
+    //$(".menu").slideToggle();
+});
+
+$(window).resize(function(){
+    var wWidth = $(window).width();
+    //화면 크기가 960 이상일 때 style="display:none" 삭제
+    if(wWidth > 960 && $(".menu").is(":hidden") ){
+        $(".menu").removeAttr("style");
+    }
+});
