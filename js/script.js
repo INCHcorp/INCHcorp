@@ -40,20 +40,35 @@ $(window).scroll(function(){
     }
 });
 
-$(".mNav").click(function(){
-    //$(".menu").css("display","block");
-    //$(".menu").show();
-    //$(".menu").fadeIn();
-    //$(".menu").slideDown();
-    $(".menu").toggle();
-    //$(".menu").fadeToggle();
-    //$(".menu").slideToggle();
+var wHeight = $(window).height();
+var dHeight = $(document).height();
+var navHeight = $("#nav").outerHeight();
+var lastScrollTop = 0;
+var moveScroll;
+
+$(window).scroll(function(event){ //스크롤을 감지
+    moveScroll = true;
 });
 
-$(window).resize(function(){
-    var wWidth = $(window).width();
-    //화면 크기가 960 이상일 때 style="display:none" 삭제
-    if(wWidth > 960 && $(".menu").is(":hidden") ){
-        $(".menu").removeAttr("style");
+setInterval(function(){ //스크롤이 감지가 되면 0,25마다 실행
+    if(moveScroll){
+        hasScroll();
+        moveScroll = false;
     }
-});
+},250);
+
+function hasScroll(){
+    var wScroll = $(this).scrollTop();  //현재 스크롤 값
+
+    if( wScroll > lastScrollTop && wScroll > navHeight ){
+            //스크롤을 내렸을 때
+            $("#nav").addClass("on");
+    }else {
+            //스크롤을 올렸을 때
+            if(wScroll + wHeight < dHeight) {
+                $("#nav").removeClass("on");
+            }
+    }
+
+    lastScrollTop = wScroll;
+}
